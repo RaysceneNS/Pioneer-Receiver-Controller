@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHarness", "TestHarness\TestHarness.csproj", "{35CB5DD9-A9DC-426F-9BF0-304185F22D0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiverController", "ControllerLibrary\ReceiverController.csproj", "{116EA4C2-B8B9-49F0-8885-C496597A3AEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35CB5DD9-A9DC-426F-9BF0-304185F22D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CB5DD9-A9DC-426F-9BF0-304185F22D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CB5DD9-A9DC-426F-9BF0-304185F22D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CB5DD9-A9DC-426F-9BF0-304185F22D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116EA4C2-B8B9-49F0-8885-C496597A3AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116EA4C2-B8B9-49F0-8885-C496597A3AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116EA4C2-B8B9-49F0-8885-C496597A3AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116EA4C2-B8B9-49F0-8885-C496597A3AEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEF04002-E8A6-4DBA-AB98-6E62D5DCF22E}
+	EndGlobalSection
+EndGlobal
