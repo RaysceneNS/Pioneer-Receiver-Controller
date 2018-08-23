@@ -7,24 +7,20 @@ namespace ReceiverController
 		bool Connect(string port);
 		void Disconnect();
 		bool IsConnected { get; }
-		int VolumeMax();
-		int VolumeMin();
-		string DeviceName();
-        
-		void PowerOn();
+		int VolumeMax { get; }
+        int VolumeMin { get; }
+	    string DeviceName { get; }
+
+	    void PowerOn();
 		void PowerOff();
 
 		PowerState MasterPowerState { get; }
 
-		void StatusRequest(string statusMode);
+		void SendStatusRequest(StatusRequest request);
 
-		void RequestInputMode(string mode);
-		void RequestListeningMode(string mode);
+		void RequestInputMode(InputMode mode);
+		void RequestListeningMode(ListeningMode mode);
 
 		event EventHandler StatusChanged;
-
-		string[] GetStatusModes();
-		string[] GetInputModes();
-		string[] GetListeningModes();
 	}
 }

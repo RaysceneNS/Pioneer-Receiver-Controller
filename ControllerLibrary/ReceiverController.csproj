@@ -40,12 +40,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InputMode.cs" />
     <Compile Include="IReceiver.cs" />
-    <Compile Include="Mode.cs" />
-    <Compile Include="Pioneer_SC05.cs" />
+    <Compile Include="ListeningMode.cs" />
+    <Compile Include="PioneerSC05.cs" />
+    <Compile Include="PowerState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceivedDataEventArgs.cs" />
     <Compile Include="SerialConnection.cs" />
+    <Compile Include="StatusRequest.cs" />
+    <Compile Include="Tone.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

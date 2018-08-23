@@ -22,7 +22,7 @@ namespace TestHarness
 			Trace.Listeners.Add(this._textBoxListener);
 
 			//create an instance of the AV receiver controller
-			this._receiver = new Pioneer_SC05();
+			this._receiver = new PioneerSC05();
 			this.UpdateUI();
 		}
 
@@ -96,13 +96,13 @@ namespace TestHarness
 			try
 			{
 				inputSelector.Items.Clear();
-				inputSelector.Items.AddRange(this._receiver.GetInputModes());
+			    inputSelector.Items.AddRange(Enum.GetNames(typeof(InputMode)));
 
 				listeningMode.Items.Clear();
-				listeningMode.Items.AddRange(this._receiver.GetListeningModes());
+				listeningMode.Items.AddRange(Enum.GetNames(typeof(ListeningMode)));
 
 
-				if (this._receiver != null && this._receiver.IsConnected)
+                if (this._receiver != null && this._receiver.IsConnected)
 				{
 					ShowStatus();
 				}
@@ -117,8 +117,8 @@ namespace TestHarness
 
 		private void ShowStatus()
 		{
-			var sc = (Pioneer_SC05)this._receiver;
-			string status = "Power : " + sc.MasterPowerState + Environment.NewLine;
+			var sc = (PioneerSC05)this._receiver;
+			var status = "Power : " + sc.MasterPowerState + Environment.NewLine;
 			status += "Mute : " + sc.Mute + Environment.NewLine;
 			status += "Volume : " + sc.Volume + Environment.NewLine;
 			status += "Input :" + sc.InputMode + Environment.NewLine;
@@ -141,20 +141,26 @@ namespace TestHarness
 
 		private void ButtonStatusRequest_Click(object sender, EventArgs e)
 		{
-			foreach (string statusMode in this._receiver.GetStatusModes())
+			foreach (var statusMode in Enum.GetValues(typeof(StatusRequest)))
 			{
-				this._receiver.StatusRequest(statusMode);
+				this._receiver.SendStatusRequest((StatusRequest)statusMode);
 			}
 		}
 
 		private void ButtonChangeInput_Click(object sender, EventArgs e)
 		{
-			this._receiver.RequestInputMode(this.inputSelector.SelectedText);
+		    if (this.inputSelector.SelectedItem == null)
+		        return;
+		    var mode = (InputMode) Enum.Parse(typeof(InputMode), this.inputSelector.SelectedItem.ToString());
+            this._receiver.RequestInputMode(mode);
 		}
-        
-		private void ButtonChangeMode_Click(object sender, EventArgs e)
-		{
-			this._receiver.RequestListeningMode(this.listeningMode.SelectedText);
-		}
+
+	    private void ButtonChangeMode_Click(object sender, EventArgs e)
+	    {
+	        if (this.listeningMode.SelectedItem == null)
+	            return;
+	        var mode = (ListeningMode) Enum.Parse(typeof(ListeningMode), this.listeningMode.SelectedItem.ToString());
+	        this._receiver.RequestListeningMode(mode);
+	    }
 	}
 }
