@@ -32,8 +32,8 @@ namespace ReceiverController
             {StatusRequest.Zone2VolumeStatus, "ZV"},
             {StatusRequest.Zone3VolumeStatus, "YV"},
             {StatusRequest.MCACCPosition, "MC"},
-            {StatusRequest.XMChannel, "XM"},
-            {StatusRequest.PhasControlStatus, "IS"},
+            {StatusRequest.XmChannel, "XM"},
+            {StatusRequest.PhaseControlStatus, "IS"},
             {StatusRequest.SiriusChannel, "SI"},
             {StatusRequest.SBchProcessingStatus, "EX"}
         };
@@ -241,7 +241,7 @@ namespace ReceiverController
 
             Trace.WriteLine("Got data " + line);
 
-            //parse the received line and update the internal state accordinly...
+            //parse the received line and update the internal state accordingly...
             if (line.StartsWith("PWR"))
             {
                 switch (line[3])

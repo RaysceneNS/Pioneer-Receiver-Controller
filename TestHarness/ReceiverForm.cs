@@ -23,7 +23,7 @@ namespace TestHarness
 
 			//create an instance of the AV receiver controller
 			this._receiver = new PioneerSC05();
-			this.UpdateUI();
+			this.UpdateUi();
 		}
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace TestHarness
 			{
 				if (this._receiver.Connect(this.connectionPort.Text))
 				{
-					this.UpdateUI();
+					this.UpdateUi();
 				}
 				else
 				{
@@ -78,7 +78,7 @@ namespace TestHarness
 		private void DisconnectButton_Click(object sender, EventArgs e)
 		{
 		    _receiver?.Disconnect();
-		    this.UpdateUI();
+		    this.UpdateUi();
 		}
 
 		/// <summary>
@@ -91,7 +91,7 @@ namespace TestHarness
 			this.CloseStuff();
 		}
 
-		private void UpdateUI()
+		private void UpdateUi()
 		{
 			try
 			{

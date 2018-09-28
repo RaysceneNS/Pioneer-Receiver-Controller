@@ -22,8 +22,8 @@
         Zone3VolumeStatus,
         MCACCPosition,
         SBchProcessingStatus,
-        XMChannel,
-        PhasControlStatus,
+        XmChannel,
+        PhaseControlStatus,
         SiriusChannel
     }
 }
